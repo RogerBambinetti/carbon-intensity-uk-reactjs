@@ -1,68 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { std } from 'mathjs'
 import { Chart } from 'react-charts'
 
-import api from '../../services/api';
-import './styles.css';
+import api from '../../services/api'
+import './styles.css'
 
-export default function Dashboard() {
+export default function Dashboard () {
+  const [data, setData] = useState([])
+  const [period, setPeriod] = useState(1)
+  const [initialDate, setInitialDate] = useState('')
+  const [averege, setAverege] = useState(0)
+  const [standardDeviation, setStandardDeviation] = useState(0)
 
-  const [data, setData] = useState([]);
-  const [period, setPeriod] = useState(1);
-  const [initialDate, setInitialDate] = useState('');
-  const [averege, setAverege] = useState(0);
-  const [standardDeviation, setStandardDeviation] = useState(0);
-
-  function calculateAverage(filteredData) {
-    var total = 0;
+  function calculateAverage (filteredData) {
+    var total = 0
     for (var i = 0; i < filteredData.length; i++) {
       if (filteredData[i].intensity.actual) {
-        total = total + filteredData[i].intensity.actual;
+        total = total + filteredData[i].intensity.actual
       }
     }
-    return (total / filteredData.length).toFixed(2);
+    return (total / filteredData.length).toFixed(2)
   }
 
-  function calculateStandardDeviation(filteredData) {
+  function calculateStandardDeviation (filteredData) {
     try {
-      const array = filteredData.map(f => f.intensity.actual & f.intensity.actual);
-      return std(array).toFixed(2);
+      const array = filteredData.map(f => f.intensity.actual & f.intensity.actual)
+      return std(array).toFixed(2)
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
   }
 
-  async function getData() {
-    var finalDate = new Date(initialDate);
-    finalDate.setDate(finalDate.getDate() + 7 * period);
-    const stringFinalDate = finalDate.toISOString();
-    const response = await api.get(`/intensity/${initialDate}T00:00Z/${stringFinalDate}`);
-    return response;
+  async function getData () {
+    var finalDate = new Date(initialDate)
+    finalDate.setDate(finalDate.getDate() + 7 * period)
+    const stringFinalDate = finalDate.toISOString()
+    const response = await api.get(`/intensity/${initialDate}T00:00Z/${stringFinalDate}`)
+    return response
   }
 
-  async function handleLoadData() {
-    const response = await getData();
+  async function handleLoadData () {
+    const response = await getData()
     try {
-      const responseData = response.data.data;
-      const filteredData = responseData.filter(item => { return item.from.includes('00:00Z') });
-      var chartData = [];
+      const responseData = response.data.data
+      const filteredData = responseData.filter(item => { return item.from.includes('00:00Z') })
+      var chartData = []
       for (var i = 0; i < filteredData.length; i++) {
-        chartData.push([filteredData[i].from, filteredData[i].intensity.actual]);
+        chartData.push([filteredData[i].from, filteredData[i].intensity.actual])
       }
       setData([
         {
           label: 'Intensity',
           data: chartData
         }
-      ]);
-      setAverege(calculateAverage(filteredData));
-      setStandardDeviation(calculateStandardDeviation(filteredData));
+      ])
+      setAverege(calculateAverage(filteredData))
+      setStandardDeviation(calculateStandardDeviation(filteredData))
     } catch (e) {
-      alert('invalid date');
+      alert('invalid date')
     }
   }
 
-  const axes = [{ primary: true, type: 'ordinal', position: 'bottom' }, { position: 'left', type: 'linear', stacked: false }];
+  const axes = [{ primary: true, type: 'ordinal', position: 'bottom' }, { position: 'left', type: 'linear', stacked: false }]
 
   return (
     <div className="dashboard-container">
@@ -91,5 +90,5 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const api = axios.create({baseURL: 'https://api.carbonintensity.org.uk/'});
+const api = axios.create({ baseURL: 'https://api.carbonintensity.org.uk/' })
 
-export default api;
+export default api
