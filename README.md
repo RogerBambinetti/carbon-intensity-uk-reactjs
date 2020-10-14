@@ -20,7 +20,7 @@
 
 ## Telas
 
-O layout responsivo adequa-se bem a dispositivos móveis e desktop.
+O layout responsivo adequa-se bem a dispositivos desktop.
 
 <p align="center">
 <img
