@@ -26,12 +26,6 @@ O layout responsivo adequa-se bem a dispositivos desktop.
 <img
 		width="350"
 		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot1.png">
-<img
-		width="350"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot2.png">
-<img
-		width="350"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot3.png">
 </p>
 
 
