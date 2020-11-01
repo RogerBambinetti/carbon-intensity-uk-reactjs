@@ -1,7 +1,7 @@
 <h1 align="center">
 <img
 		width="200"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/logo.png">
+		src="">
 </h1>
 <h3 align="center">
 	Carbon Intensity UK - NodeJS - ReactJS - React Native
@@ -10,7 +10,7 @@
 <p align="center">
 <img
 		width="700"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot0.png">
+		src="">
 </p>
  
 ## Visão geral
@@ -25,7 +25,7 @@ O layout responsivo adequa-se bem a dispositivos desktop.
 <p align="center">
 <img
 		width="350"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot1.png">
+		src="">
 </p>
 
 
