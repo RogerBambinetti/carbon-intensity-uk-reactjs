@@ -4,7 +4,7 @@
 		src="">
 </h1>
 <h3 align="center">
-	Carbon Intensity UK - NodeJS - ReactJS - React Native
+	Carbon Intensity UK - NodeJS - ReactJS
 </h3>
 
 <p align="center">
