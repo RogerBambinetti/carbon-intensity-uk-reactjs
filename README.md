@@ -1,6 +1,6 @@
 <h1 align="center">
 <img
-		width="200"
+		width="300"
 		src="https://github.com/RogerBambinetti/carbon-intensity-uk-reactjs/blob/main/preview/logo.png">
 </h1>
 <h3 align="center">
