@@ -25,7 +25,7 @@ O layout responsivo adequa-se bem a dispositivos desktop.
 <p align="center">
 <img
 		width="350"
-		src="">
+		src="https://github.com/RogerBambinetti/carbon-intensity-uk-reactjs/blob/main/preview/Screenshot0.png">
 </p>
 
 
